@@ -1,0 +1,249 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://outright.pagerduty.com/api/v1/incidents
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Token token="API_KEY"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.0.14
+      date:
+      - Tue, 18 Dec 2012 18:33:32 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 200 OK
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"d1b5dee8546d999c78d82cd08b9e7855"'
+      cache-control:
+      - must-revalidate, private, max-age=0
+      set-cookie:
+      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFhYTIzMjliZWIwMTQ3ZmQyZDA3OTkwMzQ1OGFmNTViBjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--c70789a0af4bf7cf09ee7665e32c1c4dba02dd9a;
+        path=/; HttpOnly, uid=CvgRmlDQtvzB3Si+TZMJAg==; expires=Thu, 31-Dec-37 23:55:55
+        GMT; domain=pagerduty.com; path=/
+      x-request-id:
+      - d0e97db26c0e27f1ae025a3776f758cc
+      x-runtime:
+      - '0.537506'
+      x-rack-cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '{"incidents":[{"id":"PPACGEI","incident_number":336,"created_on":"2012-11-22T05:05:18Z","status":"resolved","html_url":"http://outright.pagerduty.com/incidents/PPACGEI","incident_key":"__TRIGGERED_VIA_EMAIL__","service":{"id":"PGV50ZJ","name":"Pingdom","html_url":"http://outright.pagerduty.com/services/PGV50ZJ"},"assigned_to_user":null,"trigger_summary_data":{"subject":"DOWN
+        alert: Thrift (secure.outright.com) is DOWN"},"trigger_details_html_url":"http://outright.pagerduty.com/incidents/PPACGEI/log_entries/PTYKKQ6","last_status_change_on":"2012-11-22T05:15:52Z","last_status_change_by":{"id":"REQUESTER_ID","name":"Trae
+        Robrock","email":"trae@outright.com","html_url":"http://outright.pagerduty.com/users/REQUESTER_ID"},"number_of_escalations":1},{"id":"P0M3DH0","incident_number":337,"created_on":"2012-11-24T12:03:45Z","status":"resolved","html_url":"http://outright.pagerduty.com/incidents/P0M3DH0","incident_key":"__TRIGGERED_VIA_EMAIL__","service":{"id":"PGV50ZJ","name":"Pingdom","html_url":"http://outright.pagerduty.com/services/PGV50ZJ"},"assigned_to_user":null,"trigger_summary_data":{"subject":"DOWN
+        alert: Thrift (secure.outright.com) is DOWN"},"trigger_details_html_url":"http://outright.pagerduty.com/incidents/P0M3DH0/log_entries/PIHR7C3","last_status_change_on":"2012-11-24T12:25:04Z","last_status_change_by":{"id":"P3859OT","name":"Julio
+        Santos","email":"julio@outright.com","html_url":"http://outright.pagerduty.com/users/P3859OT"},"number_of_escalations":0}],"limit":100,"offset":0,"total":2}'
+    http_version: 
+  recorded_at: Tue, 18 Dec 2012 18:33:32 GMT
+- request:
+    method: get
+    uri: https://outright.pagerduty.com/api/v1/services
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Token token="API_KEY"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.0.14
+      date:
+      - Tue, 18 Dec 2012 18:52:53 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 200 OK
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"421a503a66656e436169a5013973b9a3"'
+      cache-control:
+      - must-revalidate, private, max-age=0
+      set-cookie:
+      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcxOTE3ODJlNjMxNTFhNGE0NzFhNTc1ZTE3NmY0ZDUzBjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--f193ea42280964d4723a59595f2860a269a862b9;
+        path=/; HttpOnly, uid=CvgRmlDQu4XB3Si+TaevAg==; expires=Thu, 31-Dec-37 23:55:55
+        GMT; domain=pagerduty.com; path=/
+      x-request-id:
+      - f132f07609f9f5870ea1fed3f1b73486
+      x-runtime:
+      - '0.282396'
+      x-rack-cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '{"services":[{"id":"POM55DP","name":"Pingdom Aggregation","service_url":"/services/POM55DP","service_key":"aggregation@outright.pagerduty.com","auto_resolve_timeout":14400,"acknowledgement_timeout":600,"created_at":"2012-12-01T13:59:54-08:00","status":"active","last_incident_timestamp":null,"email_incident_creation":"on_new_email_subject","incident_counts":{"triggered":0,"acknowledged":0,"resolved":0,"total":0},"email_filter_mode":"all-email","type":"pingdom"},{"id":"PW7E752","name":"Pingdom
+        Application","service_url":"/services/PW7E752","service_key":"application@outright.pagerduty.com","auto_resolve_timeout":14400,"acknowledgement_timeout":600,"created_at":"2012-12-01T13:51:47-08:00","status":"active","last_incident_timestamp":null,"email_incident_creation":"on_new_email_subject","incident_counts":{"triggered":0,"acknowledged":0,"resolved":0,"total":0},"email_filter_mode":"all-email","type":"pingdom"}],"limit":25,"offset":0,"total":2}'
+    http_version: 
+  recorded_at: Tue, 18 Dec 2012 18:52:53 GMT
+- request:
+    method: get
+    uri: https://outright.pagerduty.com/api/v1/maintenance_windows
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Token token="API_KEY"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.0.14
+      date:
+      - Tue, 18 Dec 2012 21:20:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 200 OK
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"6919d6c47a3676a76a87c183ec2b1c12"'
+      cache-control:
+      - must-revalidate, private, max-age=0
+      set-cookie:
+      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQzODI0NTc4YTBmMTkwZDEwYWYwMmYyYjM5MDg0MDZkBjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--3b0365f664301282b5ab3f149e5b8d4cdec50483;
+        path=/; HttpOnly, uid=CvQdAlDQ3i5M5GH+U/MuAg==; expires=Thu, 31-Dec-37 23:55:55
+        GMT; domain=pagerduty.com; path=/
+      x-request-id:
+      - 700c013cfae5ea7e9b3e2a8bf09dcdce
+      x-runtime:
+      - '0.061321'
+      x-rack-cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '{"maintenance_windows":[],"counts":{"ongoing":0,"future":0,"past":0,"all":0},"limit":25,"offset":0,"total":0}'
+    http_version: 
+  recorded_at: Tue, 18 Dec 2012 21:20:46 GMT
+- request:
+    method: get
+    uri: https://outright.pagerduty.com/api/v1/maintenance_windows?type=future
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Token token="API_KEY"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.0.14
+      date:
+      - Tue, 18 Dec 2012 22:13:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 200 OK
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"16d4bc0e609530a306c4638faa3cea1b"'
+      cache-control:
+      - must-revalidate, private, max-age=0
+      set-cookie:
+      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRmYjJmMmEzN2M5ZjVjMmMyMWY1NjgxYWI0MWEwMmE3BjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--0e97d08829ed876ff7ed576ddaf1c06978474294;
+        path=/; HttpOnly, uid=CvgRmlDQ6prBtCi9WXnOAg==; expires=Thu, 31-Dec-37 23:55:55
+        GMT; domain=pagerduty.com; path=/
+      x-request-id:
+      - 08f9e553ed4685a415f337163dc2668c
+      x-runtime:
+      - '0.121836'
+      x-rack-cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '{"maintenance_windows":[{"id":"PW4ICCT","sequence_number":1,"start_time":"2012-12-18T16:00:00-08:00","end_time":"2012-12-18T17:00:00-08:00","description":"testing","created_by":{"id":"REQUESTER_ID","name":"Bob
+        Smith","email":"bob@example.com","time_zone":"Pacific Time (US & Canada)","color":"green","role":"admin","avatar_url":"https://secure.gravatar.com/avatar/71c3bbda60a46a241bf9a2d68e41cbec.png?d=mm&r=PG","user_url":"/users/REQUESTER_ID","invitation_sent":false,"marketing_opt_out":false},"services":[{"id":"PZ9VM86","name":"Application","service_url":"/services/PZ9VM86","service_key":"application@outright.pagerduty.com","auto_resolve_timeout":14400,"acknowledgement_timeout":600,"created_at":"2012-03-07T15:44:09-08:00","status":"active","last_incident_timestamp":"2012-12-17T09:11:11-08:00","email_incident_creation":"on_new_email_subject","incident_counts":{"triggered":0,"acknowledged":0,"resolved":166,"total":166},"email_filter_mode":"all-email","type":"generic_email"}]}],"counts":{"ongoing":0,"future":1,"past":0,"all":1},"limit":25,"offset":0,"total":1}'
+    http_version: 
+  recorded_at: Tue, 18 Dec 2012 22:13:46 GMT
+- request:
+    method: post
+    uri: https://outright.pagerduty.com/api/v1/maintenance_windows
+    body:
+      encoding: UTF-8
+      string: ! '{"requester_id":"REQUESTER_ID","maintenance_window":{"start_time":"2012-12-18
+        14:34:15 -0800","end_time":"2012-12-18 15:34:15 -0800","service_ids":["POM55DP"]}}'
+    headers:
+      Authorization:
+      - Token token="API_KEY"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      server:
+      - nginx/1.0.14
+      date:
+      - Tue, 18 Dec 2012 22:34:16 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 201 Created
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"e4ddc778f459f50c19db8ae8b5369253"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      set-cookie:
+      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU5NmNmNzRjMDZjOWY2YjdhOTEzYWIxMmQxNWU2NjZkBjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--d6cb585a9c5d9b16cfbac15ab9543cd056a0060e;
+        path=/; HttpOnly, uid=CvgRmlDQ72jBtCi9WZLHAg==; expires=Thu, 31-Dec-37 23:55:55
+        GMT; domain=pagerduty.com; path=/
+      x-request-id:
+      - e6c239f2048e99d5a2b12315cceccc34
+      x-runtime:
+      - '0.331142'
+      x-rack-cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ! '{"maintenance_window":{"id":"P89LAYQ","sequence_number":1,"start_time":"2012-12-18T14:34:16-08:00","end_time":"2012-12-18T15:34:15-08:00","description":null,"created_by":{"id":"REQUESTER_ID","name":"Bob
+        Smith","email":"bob@example.com","time_zone":"Pacific Time (US & Canada)","color":"green","role":"admin","avatar_url":"https://secure.gravatar.com/avatar/71c3bbda60a46a241bf9a2d68e41cbec.png?d=mm&r=PG","user_url":"/users/REQUESTER_ID","invitation_sent":false,"marketing_opt_out":false},"services":[{"id":"POM55DP","name":"Application",
+        "service_url":"/services/POM55DP","service_key":"application@outright.pagerduty.com","auto_resolve_timeout":14400,"acknowledgement_timeout":600,"created_at":"2012-12-01T13:59:54-08:00","status":"maintenance","last_incident_timestamp":null,"email_incident_creation":"on_new_email_subject","incident_counts":{"triggered":0,"acknowledged":0,"resolved":0,"total":0},"email_filter_mode":"all-email","type":"pingdom"}]}}'
+    http_version: 
+  recorded_at: Tue, 18 Dec 2012 22:34:16 GMT
+recorded_with: VCR 2.3.0
