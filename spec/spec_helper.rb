@@ -1,4 +1,4 @@
-require "slate"
+require "beeper"
 require "webmock/rspec"
 require "mocha_standalone"
 require "uri"
@@ -15,14 +15,4 @@ RSpec.configure do |config|
   config.formatter = :documentation # :progress, :html, :textmate
 
   config.mock_framework = :mocha
-end
-
-def query(url)
-  CGI.parse(URI.parse(url).query).inject({}) do |h, x|
-    key = x.first
-    val = x.last
-    h[key] = val.size == 1 ? val.first : val
-
-    h
-  end
 end

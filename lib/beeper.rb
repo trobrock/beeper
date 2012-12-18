@@ -1,5 +1,10 @@
 require "beeper/version"
+require "beeper/client"
 
 module Beeper
-  # Your code goes here...
+  def self.configure
+    client = Client.new
+    yield client
+    client
+  end
 end
