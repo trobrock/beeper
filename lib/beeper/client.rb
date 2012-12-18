@@ -33,7 +33,7 @@ module Beeper
     end
 
     def post(collection, options={})
-      options = authenticated_post_options.merge(collection[0..-2].to_sym => options)
+      options = authenticated_post_options.merge(collection.to_s[0..-2].to_sym => options)
 
       results = connection.post(collection.to_s, options)
       results.body
