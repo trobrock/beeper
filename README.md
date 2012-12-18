@@ -1,4 +1,5 @@
 # Beeper
+[![Build Status](https://travis-ci.org/trobrock/beeper.png?branch=master)](https://travis-ci.org/trobrock/beeper)
 
 Simple api wrapper for PagerDuty
 
