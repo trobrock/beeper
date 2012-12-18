@@ -17,14 +17,14 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "faraday"
-  gem.add_dependency "faraday_middleware"
-  gem.add_dependency "rash"
-  gem.add_dependency "json"
+  gem.add_dependency "faraday", "~> 0.8.4"
+  gem.add_dependency "faraday_middleware", "~> 0.9.0"
+  gem.add_dependency "rash", "~> 0.3.2"
+  gem.add_dependency "json", "~> 1.7.5"
 
-  gem.add_development_dependency "rake"
-  gem.add_development_dependency "rspec"
-  gem.add_development_dependency "mocha"
-  gem.add_development_dependency "vcr"
+  gem.add_development_dependency "rake", "~> 10.0.2"
+  gem.add_development_dependency "rspec", "~> 2.12.0"
+  gem.add_development_dependency "mocha", "~> 0.13.1"
+  gem.add_development_dependency "vcr", "~> 2.3.0"
   gem.add_development_dependency "webmock", "~> 1.8.0"
 end
