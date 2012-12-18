@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe Beeper::Client do
-  use_vcr_cassette :record => :new_episodes
+  use_vcr_cassette
 
   let(:client) do
     Beeper.configure do |c|
