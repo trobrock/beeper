@@ -52,14 +52,14 @@ def new_maintenance_window
       "end_time"=>"2012-12-18T15:34:15-08:00",
       "description"=>nil,
       "created_by"=>{
-        "id"=>"PR55CF0",
+        "id"=>"#{Beeper::Test::REQUESTER_ID}",
         "name"=>"Bob Smith",
         "email"=>"bob@example.com",
         "time_zone"=>"Pacific Time (US & Canada)",
         "color"=>"green",
         "role"=>"admin",
         "avatar_url"=>"https://secure.gravatar.com/avatar/71c3bbda60a46a241bf9a2d68e41cbec.png?d=mm&r=PG",
-        "user_url"=>"/users/PR55CF0",
+        "user_url"=>"/users/#{Beeper::Test::REQUESTER_ID}",
         "invitation_sent"=>false,
         "marketing_opt_out"=>false
       },
@@ -129,7 +129,7 @@ def future_maintenance
       "description"=>"testing",
       "created_by"=>
       {
-        "id"=>"PR55CF0",
+        "id"=>"#{Beeper::Test::REQUESTER_ID}",
         "name"=>"Bob Smith",
         "email"=>"bob@example.com",
         "time_zone"=>"Pacific Time (US & Canada)",
@@ -137,7 +137,7 @@ def future_maintenance
         "role"=>"admin",
         "avatar_url"=>
         "https://secure.gravatar.com/avatar/71c3bbda60a46a241bf9a2d68e41cbec.png?d=mm&r=PG",
-          "user_url"=>"/users/PR55CF0",
+          "user_url"=>"/users/#{Beeper::Test::REQUESTER_ID}",
           "invitation_sent"=>false,
           "marketing_opt_out"=>false
       },
