@@ -3,26 +3,28 @@ require 'faraday_middleware'
 
 module Beeper
   class Client
+    COLLECTIONS = [:incidents, :services, :maintenance_windows].freeze
+
     attr_accessor :api_key, :subdomain, :requester_id
 
     def configured?
       !@api_key.nil? && !@subdomain.nil?
     end
 
-    def incidents
-      get(:incidents)
-    end
-
-    def services
-      get(:services)
-    end
-
-    def maintenance_windows(options={})
-      get(:maintenance_windows, options)
+    COLLECTIONS.each do |collection|
+      class_eval <<-RB
+        def #{collection}(options={})
+          get(:#{collection}, options)
+        end
+      RB
     end
 
     def create_maintenance_window(maintenance_window)
       post(:maintenance_windows, maintenance_window)
+    end
+
+    def delete_maintenance_window(id)
+      delete(:maintenance_windows, { :id => id })
     end
 
     private
@@ -33,10 +35,17 @@ module Beeper
     end
 
     def post(collection, options={})
-      options = authenticated_post_options.merge(collection.to_s[0..-2].to_sym => options)
+      single_collection = collection.to_s[0..-2]
+      options = authenticated_post_options.merge(single_collection.to_sym => options)
 
       results = connection.post(collection.to_s, options)
-      results.body
+      results.body.send(single_collection.to_sym)
+    end
+
+    def delete(collection, options={})
+      id = options.delete(:id)
+      results = connection.delete("#{collection}/#{id}", options)
+      results.success?
     end
 
     def authenticated_post_options

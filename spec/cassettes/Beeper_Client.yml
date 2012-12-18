@@ -200,7 +200,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ! '{"requester_id":"REQUESTER_ID","maintenance_window":{"start_time":"2012-12-18
-        14:34:15 -0800","end_time":"2012-12-18 15:34:15 -0800","service_ids":["POM55DP"]}}'
+        15:53:54 -0800","end_time":"2012-12-18 16:53:54 -0800","service_ids":["POM55DP"]}}'
     headers:
       Authorization:
       - Token token="API_KEY"
@@ -214,7 +214,7 @@ http_interactions:
       server:
       - nginx/1.0.14
       date:
-      - Tue, 18 Dec 2012 22:34:16 GMT
+      - Tue, 18 Dec 2012 23:53:55 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -226,24 +226,65 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       etag:
-      - ! '"e4ddc778f459f50c19db8ae8b5369253"'
+      - ! '"85f0ed1364f971210f88f800c05731b5"'
       cache-control:
       - max-age=0, private, must-revalidate
       set-cookie:
-      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU5NmNmNzRjMDZjOWY2YjdhOTEzYWIxMmQxNWU2NjZkBjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--d6cb585a9c5d9b16cfbac15ab9543cd056a0060e;
-        path=/; HttpOnly, uid=CvgRmlDQ72jBtCi9WZLHAg==; expires=Thu, 31-Dec-37 23:55:55
+      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgwNGMxMzA5YTg5NzRhZTFlMTNjY2ViMzQ4YmFkZDhjBjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--bfb27f246317ea47199d087d8cd2d7435fb3a2e6;
+        path=/; HttpOnly, uid=CvgRmlDRAhPBtCi9Wd+bAg==; expires=Thu, 31-Dec-37 23:55:55
         GMT; domain=pagerduty.com; path=/
       x-request-id:
-      - e6c239f2048e99d5a2b12315cceccc34
+      - a05701e5a910ce5848a5b45a9b5943eb
       x-runtime:
-      - '0.331142'
+      - '0.204289'
       x-rack-cache:
       - invalidate, pass
     body:
       encoding: US-ASCII
-      string: ! '{"maintenance_window":{"id":"P89LAYQ","sequence_number":1,"start_time":"2012-12-18T14:34:16-08:00","end_time":"2012-12-18T15:34:15-08:00","description":null,"created_by":{"id":"REQUESTER_ID","name":"Bob
+      string: ! '{"maintenance_window":{"id":"PO7EV8B","sequence_number":2,"start_time":"2012-12-18T15:53:55-08:00","end_time":"2012-12-18T16:53:54-08:00","description":null,"created_by":{"id":"REQUESTER_ID","name":"Bob
         Smith","email":"bob@example.com","time_zone":"Pacific Time (US & Canada)","color":"green","role":"admin","avatar_url":"https://secure.gravatar.com/avatar/71c3bbda60a46a241bf9a2d68e41cbec.png?d=mm&r=PG","user_url":"/users/REQUESTER_ID","invitation_sent":false,"marketing_opt_out":false},"services":[{"id":"POM55DP","name":"Application",
         "service_url":"/services/POM55DP","service_key":"application@outright.pagerduty.com","auto_resolve_timeout":14400,"acknowledgement_timeout":600,"created_at":"2012-12-01T13:59:54-08:00","status":"maintenance","last_incident_timestamp":null,"email_incident_creation":"on_new_email_subject","incident_counts":{"triggered":0,"acknowledged":0,"resolved":0,"total":0},"email_filter_mode":"all-email","type":"pingdom"}]}}'
     http_version: 
-  recorded_at: Tue, 18 Dec 2012 22:34:16 GMT
+  recorded_at: Tue, 18 Dec 2012 23:53:55 GMT
+- request:
+    method: delete
+    uri: https://outright.pagerduty.com/api/v1/maintenance_windows/PO7EV8B
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Token token="API_KEY"
+  response:
+    status:
+      code: 204
+      message: 
+    headers:
+      server:
+      - nginx/1.0.14
+      date:
+      - Tue, 18 Dec 2012 23:53:55 GMT
+      connection:
+      - keep-alive
+      status:
+      - 204 No Content
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      cache-control:
+      - no-cache
+      set-cookie:
+      - _pagerduty_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTdhYjU0ZjAxODlhOWQ1NmU0NDQ3MGMwMzJlNDc5YWU5BjsAVEkiHHdhcmRlbi51c2VyLmFwaV9rZXkua2V5BjsAVFsISSILQXBpS2V5BjsARlsGaQKUATA%3D--8a7a1fbad07f05003f61ec0a930004dbedda4203;
+        path=/; HttpOnly, uid=CvgRmlDRAhPBtCi9Wd+iAg==; expires=Thu, 31-Dec-37 23:55:55
+        GMT; domain=pagerduty.com; path=/
+      x-request-id:
+      - dd3377e85640482f418d70dca8b3aed4
+      x-runtime:
+      - '0.140999'
+      x-rack-cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 18 Dec 2012 23:53:55 GMT
 recorded_with: VCR 2.3.0

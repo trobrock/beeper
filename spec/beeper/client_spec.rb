@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe Beeper::Client do
-  use_vcr_cassette
+  use_vcr_cassette :record => :new_episodes
 
   let(:client) do
     Beeper.configure do |c|
@@ -40,47 +40,61 @@ describe Beeper::Client do
         :service_ids => ["POM55DP"]
       ).should == new_maintenance_window
     end
+
+    it "should be able to delete" do
+      client = Beeper.configure do |c|
+        c.api_key = Beeper::Test::API_KEY
+        c.subdomain = "outright"
+        c.requester_id = Beeper::Test::REQUESTER_ID
+      end
+
+      window = client.create_maintenance_window(
+        :start_time => Time.now,
+        :end_time => Time.now + 3600,
+        :service_ids => ["POM55DP"]
+      )
+
+      client.delete_maintenance_window(window.id).should == true
+    end
   end
 end
 
 def new_maintenance_window
   {
-    "maintenance_window" => {
-      "id"=>"P89LAYQ",
-      "sequence_number"=>1,
-      "start_time"=>"2012-12-18T14:34:16-08:00",
-      "end_time"=>"2012-12-18T15:34:15-08:00",
-      "description"=>nil,
-      "created_by"=>{
-        "id"=>"#{Beeper::Test::REQUESTER_ID}",
-        "name"=>"Bob Smith",
-        "email"=>"bob@example.com",
-        "time_zone"=>"Pacific Time (US & Canada)",
-        "color"=>"green",
-        "role"=>"admin",
-        "avatar_url"=>"https://secure.gravatar.com/avatar/71c3bbda60a46a241bf9a2d68e41cbec.png?d=mm&r=PG",
-        "user_url"=>"/users/#{Beeper::Test::REQUESTER_ID}",
-        "invitation_sent"=>false,
-        "marketing_opt_out"=>false
-      },
-      "services"=>[
-        {
-          "id"=>"POM55DP",
-          "name"=>"Application",
-          "service_url"=>"/services/POM55DP",
-          "service_key"=>"application@outright.pagerduty.com",
-          "auto_resolve_timeout"=>14400,
-          "acknowledgement_timeout"=>600,
-          "created_at"=>"2012-12-01T13:59:54-08:00",
-          "status"=>"maintenance",
-          "last_incident_timestamp"=>nil,
-          "email_incident_creation"=>"on_new_email_subject",
-          "incident_counts"=>{"triggered"=>0, "acknowledged"=>0, "resolved"=>0, "total"=>0},
-          "email_filter_mode"=>"all-email",
-          "type"=>"pingdom"
-        }
-      ]
-    }
+    "id"=>"PO7EV8B",
+    "sequence_number"=>2,
+    "start_time"=>"2012-12-18T15:53:55-08:00",
+    "end_time"=>"2012-12-18T16:53:54-08:00",
+    "description"=>nil,
+    "created_by"=>{
+      "id"=>"#{Beeper::Test::REQUESTER_ID}",
+      "name"=>"Bob Smith",
+      "email"=>"bob@example.com",
+      "time_zone"=>"Pacific Time (US & Canada)",
+      "color"=>"green",
+      "role"=>"admin",
+      "avatar_url"=>"https://secure.gravatar.com/avatar/71c3bbda60a46a241bf9a2d68e41cbec.png?d=mm&r=PG",
+      "user_url"=>"/users/#{Beeper::Test::REQUESTER_ID}",
+      "invitation_sent"=>false,
+      "marketing_opt_out"=>false
+    },
+    "services"=>[
+      {
+        "id"=>"POM55DP",
+        "name"=>"Application",
+        "service_url"=>"/services/POM55DP",
+        "service_key"=>"application@outright.pagerduty.com",
+        "auto_resolve_timeout"=>14400,
+        "acknowledgement_timeout"=>600,
+        "created_at"=>"2012-12-01T13:59:54-08:00",
+        "status"=>"maintenance",
+        "last_incident_timestamp"=>nil,
+        "email_incident_creation"=>"on_new_email_subject",
+        "incident_counts"=>{"triggered"=>0, "acknowledged"=>0, "resolved"=>0, "total"=>0},
+        "email_filter_mode"=>"all-email",
+        "type"=>"pingdom"
+      }
+    ]
   }
 end
 
