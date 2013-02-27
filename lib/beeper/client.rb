@@ -55,7 +55,7 @@ module Beeper
     end
 
     def connection
-      @connection ||= Faraday.new("https://#@subdomain.pagerduty.com/api/v1") do |conn|
+      @connection ||= Faraday.new("http://#@subdomain.pagerduty.com/api/v1") do |conn|
         conn.request :json
         conn.token_auth @api_key
 
