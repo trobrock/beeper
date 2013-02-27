@@ -5,7 +5,11 @@ module Beeper
   class Client
     COLLECTIONS = [:incidents, :services, :maintenance_windows].freeze
 
-    attr_accessor :api_key, :subdomain, :requester_id
+    attr_accessor :api_key, :subdomain, :requester_id, :secure
+
+    def initialize
+      @secure = true
+    end
 
     def configured?
       !@api_key.nil? && !@subdomain.nil?
@@ -54,8 +58,12 @@ module Beeper
       }
     end
 
+    def protocol
+      secure ? "https" : "http"
+    end
+
     def connection
-      @connection ||= Faraday.new("http://#@subdomain.pagerduty.com/api/v1") do |conn|
+      @connection ||= Faraday.new("#{protocol}://#@subdomain.pagerduty.com/api/v1") do |conn|
         conn.request :json
         conn.token_auth @api_key
 
