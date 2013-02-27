@@ -5,10 +5,10 @@ module Beeper
   class Client
     COLLECTIONS = [:incidents, :services, :maintenance_windows].freeze
 
-    attr_accessor :api_key, :subdomain, :requester_id, :secure
+    attr_accessor :api_key, :subdomain, :requester_id, :use_ssl
 
     def initialize
-      @secure = true
+      @use_ssl = true
     end
 
     def configured?
@@ -59,7 +59,7 @@ module Beeper
     end
 
     def protocol
-      secure ? "https" : "http"
+      use_ssl ? "https" : "http"
     end
 
     def connection

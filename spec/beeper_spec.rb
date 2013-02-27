@@ -16,16 +16,16 @@ describe Beeper do
       c.subdomain = "testdomain"
     end
 
-    client.secure.should == true
+    client.use_ssl.should == true
   end
 
   it "should be able to use http" do
     client = Beeper.configure do |c|
       c.api_key   = "00000000000"
       c.subdomain = "testdomain"
-      c.secure    = false
+      c.use_ssl   = false
     end
 
-    client.secure.should == false
+    client.use_ssl.should == false
   end
 end
