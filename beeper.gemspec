@@ -27,4 +27,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "mocha", "~> 0.13.1"
   gem.add_development_dependency "vcr", "~> 2.3.0"
   gem.add_development_dependency "webmock", "~> 1.8.0"
+  gem.add_development_dependency "coveralls", "~> 0.6.3"
 end
