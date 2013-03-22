@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require "beeper"
 require "mocha/api"
 require "vcr"
