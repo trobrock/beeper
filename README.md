@@ -1,5 +1,6 @@
 # Beeper
 [![Build Status](https://travis-ci.org/trobrock/beeper.png?branch=master)](https://travis-ci.org/trobrock/beeper)
+[![Coverage Status](https://coveralls.io/repos/trobrock/beeper/badge.png?branch=master)](https://coveralls.io/r/trobrock/beeper)
 
 Simple api wrapper for PagerDuty
 
