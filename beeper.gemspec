@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "faraday", "~> 0.8.4"
   gem.add_dependency "faraday_middleware", "~> 0.9.0"
   gem.add_dependency "rash", "~> 0.3.2"
-  gem.add_dependency "json", "~> 1.7.5"
+  gem.add_dependency "json", "~> 1.7", "> 1.7.5"
 
   gem.add_development_dependency "rake", "~> 10.0.2"
   gem.add_development_dependency "rspec", "~> 2.12.0"
